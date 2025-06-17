@@ -1,291 +1,291 @@
 tables:
   - name: SUBSCRIPTION_USAGE_MONTHLY_TABLE
     sql: {{ load_sql('subscription_usage_monthly') }}
-    description: Details of Subscription Daily
+    description: Details of Subscription Usage Monthly
     public: true 
 
-dimensions:
-  - name: MODEL
-    type: string
-    column: MODEL
-    description: Type of the data model (e.g., subscription, usage)
+    dimensions:
+      - name: MODEL
+        type: string
+        column: MODEL
+        description: Type of the data model (e.g., subscription, usage)
 
-  - name: DS
-    type: time
-    column: DS
-    description: Snapshot date of the record
+      - name: DS
+        type: time
+        column: DS
+        description: Snapshot date of the record
 
-  - name: MONTH
-    type: time
-    column: MONTH
-    description: Month corresponding to the data entry
+      - name: MONTH
+        type: time
+        column: MONTH
+        description: Month corresponding to the data entry
 
-  - name: UNIQUE_ID
-    type: string
-    column: UNIQUE_ID
-    description: Unique identifier combining location, product group, and advertiser
+      - name: UNIQUE_ID
+        type: string
+        column: UNIQUE_ID
+        description: Unique identifier combining location, product group, and advertiser
 
-  - name: LOCATION_ID
-    type: number
-    column: LOCATION_ID
-    description: Identifier for the physical or virtual location
+      - name: LOCATION_ID
+        type: number
+        column: LOCATION_ID
+        description: Identifier for the physical or virtual location
 
-  - name: BILLING_ACCOUNT_ID
-    type: string
-    column: BILLING_ACCOUNT_ID
-    description: ID associated with the customer's billing account
+      - name: BILLING_ACCOUNT_ID
+        type: string
+        column: BILLING_ACCOUNT_ID
+        description: ID associated with the customer's billing account
 
-  - name: CONTRACT_NUMBER
-    type: string
-    column: CONTRACT_NUMBER
-    description: Unique number associated with a contract
+      - name: CONTRACT_NUMBER
+        type: string
+        column: CONTRACT_NUMBER
+        description: Unique number associated with a contract
 
-  - name: SUBSCRIPTION_NUMBER
-    type: string
-    column: SUBSCRIPTION_NUMBER
-    description: Unique number assigned to a subscription
+      - name: SUBSCRIPTION_NUMBER
+        type: string
+        column: SUBSCRIPTION_NUMBER
+        description: Unique number assigned to a subscription
 
-  - name: CONTRACT_STATUS
-    type: string
-    column: CONTRACT_STATUS
-    description: Current status of the contract (e.g., Active, Cancelled)
+      - name: CONTRACT_STATUS
+        type: string
+        column: CONTRACT_STATUS
+        description: Current status of the contract (e.g., Active, Cancelled)
 
-  - name: CAMPAIGN_STATUS
-    type: string
-    column: CAMPAIGN_STATUS
-    description: Current status of the campaign
+      - name: CAMPAIGN_STATUS
+        type: string
+        column: CAMPAIGN_STATUS
+        description: Current status of the campaign
 
-  - name: PRODUCT_SKU
-    type: string
-    column: PRODUCT_SKU
-    description: Stock keeping unit representing the product
+      - name: PRODUCT_SKU
+        type: string
+        column: PRODUCT_SKU
+        description: Stock keeping unit representing the product
 
-  - name: PRODUCT_GROUP
-    type: string
-    column: PRODUCT_GROUP
-    description: Group or category of the product
+      - name: PRODUCT_GROUP
+        type: string
+        column: PRODUCT_GROUP
+        description: Group or category of the product
 
-  - name: ADVERTISER_ID
-    type: string
-    column: ADVERTISER_ID
-    description: Unique ID for the advertiser
+      - name: ADVERTISER_ID
+        type: string
+        column: ADVERTISER_ID
+        description: Unique ID for the advertiser
 
-  - name: CAMPAIGN_ID
-    type: string
-    column: CAMPAIGN_ID
-    description: Unique identifier for the marketing campaign
+      - name: CAMPAIGN_ID
+        type: string
+        column: CAMPAIGN_ID
+        description: Unique identifier for the marketing campaign
 
-  - name: CAMPAIGN_TYPE_ID
-    type: string
-    column: CAMPAIGN_TYPE_ID
-    description: Type of campaign (e.g., CPC, CPM)
+      - name: CAMPAIGN_TYPE_ID
+        type: string
+        column: CAMPAIGN_TYPE_ID
+        description: Type of campaign (e.g., CPC, CPM)
 
-  - name: SP_TYPE
-    type: string
-    column: SP_TYPE
-    description: Service provider or sales partner type
+      - name: SP_TYPE
+        type: string
+        column: SP_TYPE
+        description: Service provider or sales partner type
 
-  - name: ADVERTISER_NAME
-    type: string
-    column: ADVERTISER_NAME
-    description: Name of the advertiser
+      - name: ADVERTISER_NAME
+        type: string
+        column: ADVERTISER_NAME
+        description: Name of the advertiser
 
-  - name: COUNTRY
-    type: string
-    column: COUNTRY
-    description: Country where the activity took place
+      - name: COUNTRY
+        type: string
+        column: COUNTRY
+        description: Country where the activity took place
 
-  - name: CONTINENT
-    type: string
-    column: CONTINENT
-    description: Continent of the country
+      - name: CONTINENT
+        type: string
+        column: CONTINENT
+        description: Continent of the country
 
-  - name: PLACE_TYPE
-    type: string
-    column: PLACE_TYPE
-    description: Type of place (e.g., region, city, state)
+      - name: PLACE_TYPE
+        type: string
+        column: PLACE_TYPE
+        description: Type of place (e.g., region, city, state)
 
-  - name: CONTRACT_FREE_TRIAL
-    type: boolean
-    column: CONTRACT_FREE_TRIAL
-    description: Indicates whether the contract includes a free trial
+      - name: CONTRACT_FREE_TRIAL
+        type: boolean
+        column: CONTRACT_FREE_TRIAL
+        description: Indicates whether the contract includes a free trial
 
-  - name: NET_BILLING_UNIT_USD
-    type: number
-    column: NET_BILLING_UNIT_USD
-    description: Net billing unit amount in USD
+      - name: NET_BILLING_UNIT_USD
+        type: number
+        column: NET_BILLING_UNIT_USD
+        description: Net billing unit amount in USD
 
-  - name: BEGINNING_NET_MRR_USD
-    type: number
-    column: BEGINNING_NET_MRR_USD
-    description: Net Monthly Recurring Revenue at the beginning of the period
+      - name: BEGINNING_NET_MRR_USD
+        type: number
+        column: BEGINNING_NET_MRR_USD
+        description: Net Monthly Recurring Revenue at the beginning of the period
 
-  - name: NEW_NET_MRR_USD
-    type: number
-    column: NEW_NET_MRR_USD
-    description: Net new MRR generated in the period
+      - name: NEW_NET_MRR_USD
+        type: number
+        column: NEW_NET_MRR_USD
+        description: Net new MRR generated in the period
 
-  - name: UPGRADE_NET_MRR_USD
-    type: number
-    column: UPGRADE_NET_MRR_USD
-    description: MRR added due to customer upgrades
+      - name: UPGRADE_NET_MRR_USD
+        type: number
+        column: UPGRADE_NET_MRR_USD
+        description: MRR added due to customer upgrades
 
-  - name: DOWNGRADE_NET_MRR_USD
-    type: number
-    column: DOWNGRADE_NET_MRR_USD
-    description: MRR lost due to customer downgrades
+      - name: DOWNGRADE_NET_MRR_USD
+        type: number
+        column: DOWNGRADE_NET_MRR_USD
+        description: MRR lost due to customer downgrades
 
-  - name: FX_ADJ_NET_MRR_USD
-    type: number
-    column: FX_ADJ_NET_MRR_USD
-    description: Foreign exchange adjustment to MRR in USD
+      - name: FX_ADJ_NET_MRR_USD
+        type: number
+        column: FX_ADJ_NET_MRR_USD
+        description: Foreign exchange adjustment to MRR in USD
 
-  - name: PLANNED_EXPIRY_NET_MRR_USD
-    type: number
-    column: PLANNED_EXPIRY_NET_MRR_USD
-    description: MRR lost due to planned expirations
+      - name: PLANNED_EXPIRY_NET_MRR_USD
+        type: number
+        column: PLANNED_EXPIRY_NET_MRR_USD
+        description: MRR lost due to planned expirations
 
-  - name: UNPLANNED_NET_MRR_CHURN_USD
-    type: number
-    column: UNPLANNED_NET_MRR_CHURN_USD
-    description: MRR lost due to unplanned churn
+      - name: UNPLANNED_NET_MRR_CHURN_USD
+        type: number
+        column: UNPLANNED_NET_MRR_CHURN_USD
+        description: MRR lost due to unplanned churn
 
-  - name: PLANNED_NET_MRR_CHURN_USD
-    type: number
-    column: PLANNED_NET_MRR_CHURN_USD
-    description: MRR lost due to planned churn
+      - name: PLANNED_NET_MRR_CHURN_USD
+        type: number
+        column: PLANNED_NET_MRR_CHURN_USD
+        description: MRR lost due to planned churn
 
-  - name: ENDING_NET_MRR_USD
-    type: number
-    column: ENDING_NET_MRR_USD
-    description: Ending Net MRR at the end of the period
+      - name: ENDING_NET_MRR_USD
+        type: number
+        column: ENDING_NET_MRR_USD
+        description: Ending Net MRR at the end of the period
 
-  - name: TERM_START_DATE
-    type: time
-    column: TERM_START_DATE
-    description: Start date of the contract term
+      - name: TERM_START_DATE
+        type: time
+        column: TERM_START_DATE
+        description: Start date of the contract term
 
-  - name: TERM_END_DATE
-    type: time
-    column: TERM_END_DATE
-    description: End date of the contract term
+      - name: TERM_END_DATE
+        type: time
+        column: TERM_END_DATE
+        description: End date of the contract term
 
-  - name: CONTRACT_START_DATE
-    type: time
-    column: CONTRACT_START_DATE
-    description: Date when the contract began
+      - name: CONTRACT_START_DATE
+        type: time
+        column: CONTRACT_START_DATE
+        description: Date when the contract began
 
-  - name: CANCELLATION_DS
-    type: time
-    column: CANCELLATION_DS
-    description: Date of contract cancellation
+      - name: CANCELLATION_DS
+        type: time
+        column: CANCELLATION_DS
+        description: Date of contract cancellation
 
-  - name: IS_RENEWAL_MONTH
-    type: boolean
-    column: IS_RENEWAL_MONTH
-    description: Indicates if the record is in a renewal month
+      - name: IS_RENEWAL_MONTH
+        type: boolean
+        column: IS_RENEWAL_MONTH
+        description: Indicates if the record is in a renewal month
 
-  - name: GROSS_BOOKED_USD
-    type: number
-    column: GROSS_BOOKED_USD
-    description: Gross amount booked in USD
+      - name: GROSS_BOOKED_USD
+        type: number
+        column: GROSS_BOOKED_USD
+        description: Gross amount booked in USD
 
-  - name: NET_BOOKED_USD
-    type: number
-    column: NET_BOOKED_USD
-    description: Net amount booked in USD
+      - name: NET_BOOKED_USD
+        type: number
+        column: NET_BOOKED_USD
+        description: Net amount booked in USD
 
-  - name: BEGINNING_NET_BOOKED_USD
-    type: number
-    column: BEGINNING_NET_BOOKED_USD
-    description: Beginning value of net booked amount
+      - name: BEGINNING_NET_BOOKED_USD
+        type: number
+        column: BEGINNING_NET_BOOKED_USD
+        description: Beginning value of net booked amount
 
-  - name: NEW_NET_BOOKED_USD
-    type: number
-    column: NEW_NET_BOOKED_USD
-    description: Net amount newly booked in the period
+      - name: NEW_NET_BOOKED_USD
+        type: number
+        column: NEW_NET_BOOKED_USD
+        description: Net amount newly booked in the period
 
-  - name: UPGRADE_NET_BOOKED_USD
-    type: number
-    column: UPGRADE_NET_BOOKED_USD
-    description: Net amount booked from upgrades
+      - name: UPGRADE_NET_BOOKED_USD
+        type: number
+        column: UPGRADE_NET_BOOKED_USD
+        description: Net amount booked from upgrades
 
-  - name: DOWNGRADE_NET_BOOKED_USD
-    type: number
-    column: DOWNGRADE_NET_BOOKED_USD
-    description: Net amount reduced from downgrades
+      - name: DOWNGRADE_NET_BOOKED_USD
+        type: number
+        column: DOWNGRADE_NET_BOOKED_USD
+        description: Net amount reduced from downgrades
 
-  - name: FX_ADJ_NET_BOOKED_USD
-    type: number
-    column: FX_ADJ_NET_BOOKED_USD
-    description: Foreign exchange adjusted booked revenue
+      - name: FX_ADJ_NET_BOOKED_USD
+        type: number
+        column: FX_ADJ_NET_BOOKED_USD
+        description: Foreign exchange adjusted booked revenue
 
-  - name: CHURN_NET_BOOKED_USD
-    type: number
-    column: CHURN_NET_BOOKED_USD
-    description: Booked revenue lost due to churn
+      - name: CHURN_NET_BOOKED_USD
+        type: number
+        column: CHURN_NET_BOOKED_USD
+        description: Booked revenue lost due to churn
 
-  - name: ENDING_NET_BOOKED_USD
-    type: number
-    column: ENDING_NET_BOOKED_USD
-    description: Ending net booked amount
+      - name: ENDING_NET_BOOKED_USD
+        type: number
+        column: ENDING_NET_BOOKED_USD
+        description: Ending net booked amount
 
-  - name: DELIVERED_REVENUE_NET_USD
-    type: number
-    column: DELIVERED_REVENUE_NET_USD
-    description: Delivered net revenue in USD
+      - name: DELIVERED_REVENUE_NET_USD
+        type: number
+        column: DELIVERED_REVENUE_NET_USD
+        description: Delivered net revenue in USD
 
-  - name: FX_ADJ_DELIVERED_REVENUE_NET_USD
-    type: number
-    column: FX_ADJ_DELIVERED_REVENUE_NET_USD
-    description: Foreign exchange adjusted delivered revenue
+      - name: FX_ADJ_DELIVERED_REVENUE_NET_USD
+        type: number
+        column: FX_ADJ_DELIVERED_REVENUE_NET_USD
+        description: Foreign exchange adjusted delivered revenue
 
-  - name: CAMPAIGN_START_DATE
-    type: time
-    column: CAMPAIGN_START_DATE
-    description: Start date of the campaign
+      - name: CAMPAIGN_START_DATE
+        type: time
+        column: CAMPAIGN_START_DATE
+        description: Start date of the campaign
 
-  - name: CAMPAIGN_END_DATE
-    type: time
-    column: CAMPAIGN_END_DATE
-    description: End date of the campaign
+      - name: CAMPAIGN_END_DATE
+        type: time
+        column: CAMPAIGN_END_DATE
+        description: End date of the campaign
 
-  - name: CPC_USD
-    type: number
-    column: CPC_USD
-    description: Cost per click in USD
+      - name: CPC_USD
+        type: number
+        column: CPC_USD
+        description: Cost per click in USD
 
-  - name: NUMBER_DAYS_ACTIVE
-    type: number
-    column: NUMBER_DAYS_ACTIVE
-    description: Total number of days active in the period
+      - name: NUMBER_DAYS_ACTIVE
+        type: number
+        column: NUMBER_DAYS_ACTIVE
+        description: Total number of days active in the period
 
-  - name: NUMBER_DAYS_PAUSED
-    type: number
-    column: NUMBER_DAYS_PAUSED
-    description: Total number of days paused in the period
+      - name: NUMBER_DAYS_PAUSED
+        type: number
+        column: NUMBER_DAYS_PAUSED
+        description: Total number of days paused in the period
 
-  - name: NUMBER_DAYS_SUSPENDED
-    type: number
-    column: NUMBER_DAYS_SUSPENDED
-    description: Total number of days suspended
+      - name: NUMBER_DAYS_SUSPENDED
+        type: number
+        column: NUMBER_DAYS_SUSPENDED
+        description: Total number of days suspended
 
-  - name: NUMBER_DAYS_CANCELLED
-    type: number
-    column: NUMBER_DAYS_CANCELLED
-    description: Total number of days cancelled
+      - name: NUMBER_DAYS_CANCELLED
+        type: number
+        column: NUMBER_DAYS_CANCELLED
+        description: Total number of days cancelled
 
-  - name: LAST_STATUS_ACTIVE_DATE
-    type: time
-    column: LAST_STATUS_ACTIVE_DATE
-    description: Last known active date
+      - name: LAST_STATUS_ACTIVE_DATE
+        type: time
+        column: LAST_STATUS_ACTIVE_DATE
+        description: Last known active date
 
-  - name: LAST_STATUS_UPDATE_DATE
-    type: time
-    column: LAST_STATUS_UPDATE_DATE
-    description: Date when the status was last updated
+      - name: LAST_STATUS_UPDATE_DATE
+        type: time
+        column: LAST_STATUS_UPDATE_DATE
+        description: Date when the status was last updated
 
-  - name: CHURN_DATE
-    type: time
-    column: CHURN_DATE
-    description: Date when churn occurred
+      - name: CHURN_DATE
+        type: time
+        column: CHURN_DATE
+        description: Date when churn occurred
