@@ -1,5 +1,5 @@
 tables:
-  - name: SUBSCRIPTION_USAGE_MONTHLY
+  - name: SUBSCRIPTION_USAGE_MONTHLY_TABLE
     sql: {{ load_sql('subscription_usage_monthly') }}
     description: Details of Subscription Daily
     public: true 
