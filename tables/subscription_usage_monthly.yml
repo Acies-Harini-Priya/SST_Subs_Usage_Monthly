@@ -289,3 +289,29 @@ tables:
         type: time
         column: CHURN_DATE
         description: Date when churn occurred
+
+    measures:
+      - name: total_contracts
+        sql: CONTRACT_NUMBER
+        type: count_distinct
+        description: Total number of distinct contracts in the dataset
+
+      - name: total_new_net_mrr_usd
+        sql: NEW_NET_MRR_USD
+        type: sum
+        description: Total new Monthly Recurring Revenue (MRR) in USD
+
+      - name: total_unplanned_churn_mrr_usd
+        sql: UNPLANNED_NET_MRR_CHURN_USD
+        type: sum
+        description: Total MRR lost due to unplanned churn
+
+      - name: total_upgrade_net_mrr_usd
+        sql: UPGRADE_NET_MRR_USD
+        type: sum
+        description: Total MRR gained through customer upgrades
+
+      - name: total_delivered_revenue_net_usd
+        sql: DELIVERED_REVENUE_NET_USD
+        type: sum
+        description: Total delivered net revenue in USD
